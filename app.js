@@ -21,6 +21,8 @@ $(document).ready(function () {
         }, 1000)
         e.preventDefault();
     });
+
+
     //mobile navbar
 
     const mobile = document.querySelector(".menu-toggle");
@@ -39,6 +41,96 @@ $(document).ready(function () {
         }
     })
 })
+// function flipCard(card) {
+//     const isFlipped = card.classList.toggle('flipped');
+//     const video = card.querySelector('.card-video');
+
+//     if (isFlipped) {
+//         video.play();
+//     } else {
+//         video.pause();
+//         video.currentTime = 0; // Reset video to start
+//     }
+// }
+
+// Variable to track if the video is playing
+let isVideoPlaying = false;
+let currentVideoPlayingId;
+
+// Function to open the modal and start playing the video
+function openVideoModal(id) {
+    let video = document.getElementById('modalVideo' + id);
+    let modal = document.getElementById('videoModal' + id);
+    modal.style.display = 'block'; // Display the modal
+    video.play(); // Start playing the video
+    isVideoPlaying = true;
+    currentVideoPlayingId = id;
+    document.body.style.overflow = 'hidden';
+
+    // Start observing the modal for visibility changes
+    observer.observe(modal);
+}
+
+// Function to close the modal and pause the video
+function closeVideoModal(id) {
+    let video = document.getElementById('modalVideo' + id);
+    let modal = document.getElementById('videoModal' + id);
+    modal.style.display = 'none'; // Hide the modal
+    video.pause(); // Pause the video
+    isVideoPlaying = false;
+    currentVideoPlayingId = null;
+    document.body.style.overflow = 'auto';
+
+    // Stop observing the modal for visibility changes
+    observer.unobserve(modal);
+}
+
+// Create an IntersectionObserver to monitor visibility changes of the modal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            // Modal is out of view
+            if (isVideoPlaying) {
+                document.getElementById('modalVideo' + currentVideoPlayingId).pause();
+                isVideoPlaying = false;
+            }
+        } else {
+            // Modal is in view
+            if (!isVideoPlaying) {
+                document.getElementById('modalVideo' + currentVideoPlayingId).play();
+                isVideoPlaying = true;
+            }
+        }
+    });
+}, { threshold: 0.5 }); // Adjust the threshold as needed
+
+// Helper function to check if an element is in the viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+
+
+
 // whatsapp click
 document.querySelectorAll('.package-btn').forEach(function (button) {
     button.addEventListener('click', function () {

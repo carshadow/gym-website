@@ -25,11 +25,12 @@
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
+            <div class="logo-container">
+                <img class="program-logo" src="img/MbLogo.jpg" alt="MbFitness Logo">
+                <a href="#home" class="logo">MbFitness</a>
+            </div>
         </div>
-        <div class="logo-container">
-            <img class="program-logo" src="img/MbLogo.jpg" alt="MbFitness Logo">
-            <a href="#home" class="logo">MbFitness</a>
-        </div>
+
         <div class="menus">
             <a href="#program">Programs</a>
             <a href="#about">About Us</a>
@@ -38,7 +39,6 @@
             <a href="#comunicate">Siguenos</a>
 
         </div>
-        <!-- <a href="#" class="signUp">Sign Up</a> -->
     </nav>
 
     <section class="header" id="home">
@@ -52,9 +52,11 @@
                 un espacio donde puedas concentrarte en tus objetivos sin distracciones. Con un equipo dedicado y
                 apasionado por el fitness, en MBfitness te guiamos en tu camino hacia una mejor salud y bienestar,
                 creando una experiencia positiva y enriquecedora para todos nuestros clientes.</p>
-            <!-- <button class="header-btn">Lets Find Out</button> -->
         </div>
     </section>
+
+    <!-- PROGRAMS SECTION -->
+
     <section class="program" id="program">
         <div class="title">Program</div>
         <div class="program-wrapper">
@@ -65,7 +67,17 @@
                 </div>
                 <div class="program-detail">
                     <p> Rutinas para crear fuerza.</p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('1')">Vistazo</button>
+                    <!-- The modal -->
+                    <div id="videoModal1" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('1')">&times;</span>
+                            <video id="modalVideo1" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/IMG_0958.MOV"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="program-card">
@@ -75,7 +87,17 @@
                 </div>
                 <div class="program-detail">
                     <p>Rutinas para quemar claorias y grasa.</p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('2')">Vistazo</button>
+                    <!-- The modal -->
+                    <div id="videoModal2" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('2')">&times;</span>
+                            <video id="modalVideo2" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/Sadhier.MOV"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="program-card">
@@ -85,7 +107,17 @@
                 </div>
                 <div class="program-detail">
                     <p> Rutinas en la playa bajo el sol</p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('3')">Vistazo</button>
+                    <!-- The modal -->
+                    <div id="videoModal3" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('3')">&times;</span>
+                            <video id="modalVideo3" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/capy.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="program-card">
@@ -95,7 +127,17 @@
                 </div>
                 <div class="program-detail">
                     <p> Rutinas en la comodidad de tu casa</p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('4')">Vistazo</button>
+                    <!-- The modal -->
+                    <div id="videoModal4" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('4')">&times;</span>
+                            <video id="modalVideo4" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/benchPress.MOV"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="program-card">
@@ -105,7 +147,17 @@
                 </div>
                 <div class="program-detail">
                     <p>Rutinas en equipo </p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('5')">Vistazo</button>
+                    <!-- The modal -->
+                    <div id="videoModal5" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('5')">&times;</span>
+                            <video id="modalVideo5" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/batatas.MOV"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="program-card">
@@ -115,11 +167,25 @@
                 </div>
                 <div class="program-detail">
                     <p>Rutinas para niños athletas</p>
-                    <!-- <button class="program-btn">More</button> -->
+                    <button onclick="openVideoModal('6')">Vitaso</button>
+                    <!-- The modal -->
+                    <div id="videoModal6" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeVideoModal('6')">&times;</span>
+                            <video id="modalVideo6" controls>
+                                <source src="/Users/carlossanchez/Desktop/MBFitness/Videos/IMG_0958.MOV"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- STORY SECTION -->
+
     <section class="story" id="about">
         <div class="story-wrapper">
             <div class="title">MbFitness</div>
@@ -149,15 +215,18 @@
             </div>
         </div>
     </section>
-    <section class="client">
+
+    <!-- GYM CLICK SECTION -->
+
+    <section class="gym">
         <div class="title">Gym<br>information</div>
-        <div class="client-wrapper">
-            <div class="client-click"
+        <div class="gym-wrapper">
+            <div class="gym-click"
                 data-href="https://www.instagram.com/reel/C7pvWCDu8EH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
-                <div class="client-card">
-                    <div class="client-icons"> <i class="fa fa-external-link" aria-hidden="true"></i></div>
-                    <img class="client-img" src="img/gym.jpg">
-                    <div class="client-detail">
+                <div class="gym-card">
+                    <div class="gym-icons"> <i class="fa fa-external-link" aria-hidden="true"></i></div>
+                    <img class="gym-img" src="img/gym.jpg">
+                    <div class="gym-detail">
                         <h3>Nuestras Facilidades </h3>
                         <a
                             href="https://www.instagram.com/reel/C7pvWCDu8EH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Mbfitness
@@ -168,12 +237,12 @@
                     </div>
                 </div>
             </div>
-            <div class="client-click"
+            <div class="gym-click"
                 data-href="https://www.instagram.com/reel/C7vL1iptYRZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
-                <div class="client-card">
-                    <div class="client-icons"> <i class="fa fa-external-link" aria-hidden="true"></i></div>
-                    <img class="client-img" src="img/cambiar.jpeg">
-                    <div class="client-detail">
+                <div class="gym-card">
+                    <div class="gym-icons"> <i class="fa fa-external-link" aria-hidden="true"></i></div>
+                    <img class="gym-img" src="img/cambiar.jpeg">
+                    <div class="gym-detail">
                         <h3>Donde estamos Ubicados?</h3>
                         <a
                             href="https://www.instagram.com/reel/C7vL1iptYRZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">Click
@@ -183,11 +252,11 @@
                     </div>
                 </div>
             </div>
-            <div class="client-click" data-href="https://maps.app.goo.gl/SbpV3mdog31JJjme6">
-                <div class="client-card">
-                    <div class="client-icons"> <i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                    <img class="client-img" src="img/fitzone.png">
-                    <div class="client-detail">
+            <div class="gym-click" data-href="https://maps.app.goo.gl/SbpV3mdog31JJjme6">
+                <div class="gym-card">
+                    <div class="gym-icons"> <i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <img class="gym-img" src="img/fitzone.png">
+                    <div class="gym-detail">
                         <h3>Ubicacion en google</h3>
                         <a href="https://maps.app.goo.gl/SbpV3mdog31JJjme6">Click para la ubicacion</a>
                         <p>Aqui la ubicacion en google de donde estamos! Para que no te pierdas de nada y llegues con
@@ -198,6 +267,103 @@
         </div>
         </div>
     </section>
+
+    <!-- TRANSFORMATION SECTION -->
+
+    <section class="transformation" id="p=transformation">
+        <div class="title">Transformations</div>
+        <div class="transformation-wrapper">
+            <div class="transformation-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front transformation-img">
+                        <img src="img/NelsonBefore.jpg" alt="Photo 1" class="card-img">
+                    </div>
+                    <div class="flip-card-back transformation-img">
+                        <img src="img/NelsonAfter.jpg" alt="Photo 2" class="card-img">
+                    </div>
+                </div>
+                <div class="transformation-title"></div>
+            </div>
+            <div class="transformation-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front transformation-img">
+                        <img src="img/clienteAntes.jpg" alt="Photo 1" class="card-img">
+                    </div>
+                    <div class="flip-card-back transformation-img">
+                        <img src="img/ClienteDespues.jpg" alt="Photo 2" class="card-img">
+                    </div>
+                </div>
+                <div class="transformation-title"></div>
+            </div>
+            <div class="transformation-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front transformation-img">
+                        <img src="img/EduardBefore.jpg" alt="Photo 1" class="card-img">
+                    </div>
+                    <div class="flip-card-back transformation-img">
+                        <img src="img/EduardoAfter.jpg" alt="Photo 2" class="card-img">
+                    </div>
+                </div>
+                <div class="transformation-title"></div>
+            </div>
+            <div class="transformation-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front transformation-img">
+                        <img src="img/Natalia Before.jpg" alt="Photo 1" class="card-img">
+                    </div>
+                    <div class="flip-card-back transformation-img">
+                        <img src="img/said2.png" alt="Photo 2" class="card-img">
+                    </div>
+                </div>
+                <div class="transformation-title"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT SAID SECTION -->
+
+    <section class="client">
+        <div class="title">Clients<br>Said</div>
+        <div class="client-wrapper">
+            <div class="client-click">
+                <div class="client-card">
+                    <div class="client-icons"></div>
+                    <img class="client-img" src="img/said1.png">
+                    <div class="client-detail">
+                        <h3>Eduardo</h3>
+                        <p>Satisfecho al 100% mi transformacion cambio mi manera de vivir gracias a las rutinas
+                            personalizadas de el Coach y las facilidades de Mbfitness pude llegar a mi meta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="client-click">
+                <div class="client-card">
+                    <div class="client-icons"></div>
+                    <img class="client-img" src="img/said2.png">
+                    <div class="client-detail">
+                        <h3>Natalia Solis</h3>
+                        <p>Satisfecho al 100% mi transformacion cambio mi manera de vivir gracias a las rutinas
+                            personalizadas de el Coach y las facilidades de Mbfitness pude llegar a mi meta</p>
+                    </div>
+                </div>
+            </div>
+            <div class="client-click">
+                <div class="client-card">
+                    <div class="client-icons"></div>
+                    <img class="client-img" src="img/said3.png">
+                    <div class="client-detail">
+                        <h3>Jose Falero</h3>
+                        <p>Satisfecho al 100% mi transformacion cambio mi manera de vivir gracias a las rutinas
+                            personalizadas de el Coach y las facilidades de Mbfitness pude llegar a mi meta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES SECTION -->
+
     <section class="packages" id="packages">
         <div class="title"> Paquetes </div>
         <div class="package-wrapper">
@@ -218,7 +384,7 @@
             <div class="package-card">
                 <div class="package-p">
                     <h1> 2 PERSONAS </h1>
-                    <h2>$35 Por Sesión</h2>
+                    <h2>$50 Por Sesión</h2>
                     <p><i class="fas fa-check-square"></i>Entrenamiento Personal</p>
                     <p><i class="fas fa-check-square"></i>Monitoreo Continuo</p>
                     <p><i class="fas fa-check-square"></i>Evaluacion Fisica</p>
@@ -232,7 +398,7 @@
             <div class="package-card">
                 <div class="package-p">
                     <h1> 3 PERSONAS </h1>
-                    <h2>$35 Por Sesión</h2>
+                    <h2>$60 Por Sesión</h2>
                     <p><i class="fas fa-check-square"></i>Entrenamiento Personal</p>
                     <p><i class="fas fa-check-square"></i>Monitoreo Continuo</p>
                     <p><i class="fas fa-check-square"></i>Evaluacion Fisica</p>
@@ -245,8 +411,8 @@
             </div>
             <div class="package-card">
                 <div class="package-p">
-                    <h1> Oferta Grupal </h1>
-                    <h2>6/10 Personas</h2>
+                    <h1>6+ Personas </h1>
+                    <h2>$70 Por Sesión</h2>
                     <p><i class="fas fa-check-square"></i>Entrenamiento a domicilio</p>
                     <p><i class="fas fa-check-square"></i>Rutina personalizada</p>
                     <p><i class="fas fa-check-square"></i>Entrenamiento Supervisado</p>
@@ -259,10 +425,14 @@
             </div>
         </div>
     </section>
+
+    <!-- BOOTCAMP SECTION -->
+
     <section class="bootcamp" id="bootcamp">
         <div class="bootcamp-desc">
             <div class="title-bootcamp"><span>BEACH</span>BOOTCAMP<br>FOR<span>EVERYBODY</span></div>
-            <p>MBfitness tambien ofrece Bootcamps todos los sabados en la playa Ultimo Trolli. En el cual puedes salir
+            <p>MBfitness tambien ofrece Bootcamps todos los sabados en la playa Ultimo Trolli. En el cual puedes
+                salir
                 de tu zona de confort y conocer y hacer ejercicios con diferentes personas</p>
             <button class="bootcamp-btn"
                 data-href="https://wa.me/17874231472?text=Hola%2C%20me%20interesa%20el%20bootcamp%20playero!">Me
@@ -281,6 +451,9 @@
             </div>
         </div>
     </section>
+
+    <!-- COACH SECTION -->
+
     <section class="coach" id="coach">
         <div class="title">Entrenador</div>
         <div class="coach-wrapper">
@@ -299,8 +472,8 @@
                 <div class="coach-detail">
                     <h3>Alexander 'Koala' Falero</h3>
                     <h5>Certificado de entrenador</h5>
-                    <p>Alexander Forma parte del equipo de Balnomano los Gigantes de Carolina donde es uno de los
-                        jugadores clave y veterano de CarolionaHC</p>
+                    <p>Alexander Forma parte del equipo de Balnomano Carolina HC donde es uno de los
+                        jugadores clave y veterano del equipo</p>
                 </div>
             </div>
         </div>
@@ -325,22 +498,18 @@
             </div>
         </div>
     </section>
-
+    <!-- FOOTER SECTION -->
     <footer>
         <section class="comunicate" id="comunicate">
             <div class="subscribe">
                 <div class="title"> Subscribete </div>
                 <p> Subribete para que tengas mas acceso a todas nuestras ofertas y especiales que brindamos en
                     Mbfitness
-                    Somos mejores que planet fitness and we crunch the competition.</p>
+                    Somos mejores que la competencia.</p>
 
                 <h4> Reserva tu espacio puedes cominicarte con nosotros dandole click cualquiera de estas
                     plataformas!
                 </h4>
-                <!-- <div class="subscribe-form">
-                <input type="text" aria-placeholder="Email">
-                <button class="subscribe-btn">Send</button>
-            </div> -->
                 <div class="social-media">
                     <a href="https:www.instagram.com/mbfitnesspr"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@alexanderfaleropr"><i class="fa-brands fa-tiktok"></i></a>
@@ -349,36 +518,6 @@
                     <h3>(787)423-1472</h3>
                 </div>
             </div>
-            <!-- <div class="footer-menus">
-            <div class="footer-wrapper">
-                <div class="footer-card">
-                    <h4>Company</h4>
-                    <a href="#">Press</a>
-                    <a href="#">Blog</a>
-                    <a href="#">About</a>
-                    <a href="#">Careers</a>
-                </div>
-                <div class="footer-card">
-                    <h4>Product</h4>
-                    <a href="#">Training</a>
-                    <a href="#">Nutricion</a>
-                    <a href="#">Shop</a>
-                </div>
-            </div>
-            <div class="footer-wrapper">
-                <div class="footer-card">
-                    <h4>Community</h4>
-                    <a href="#">Contact</a>
-                    <a href="#"> Find us</a>
-                    <a href="#">Membresia</a>
-                </div>
-                <div class="footer-card">
-                    <h4>Classes</h4>
-                    <a href="#">Book a Class</a>
-                    <a href="#"> Find a class</a>
-                </div>
-            </div>
-        </div> -->
         </section>
     </footer>
 </body>

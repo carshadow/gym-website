@@ -36,7 +36,7 @@
  }
 
  .nav-logo {
-     position: absolute;
+     position: relative;
      top: 10px;
      left: 10px;
  }
@@ -72,6 +72,7 @@
  }
 
  .program-logo {
+     display: flex;
      width: 50px;
      height: 50px;
      border-radius: 50%;
@@ -159,6 +160,81 @@
  }
 
 
+
+ /* Modal styles */
+ .modal {
+     display: none;
+     /* Hidden by default */
+     position: fixed;
+     /* Stay in place */
+     z-index: 1;
+     /* Sit on top */
+     left: 0;
+     top: 0;
+     width: 100%;
+     /* Full width */
+     height: 100%;
+     /* Full height */
+     overflow: none;
+     /* Enable scrolling if needed */
+     background-color: rgba(0, 0, 0, 0.8);
+     /* Black background with opacity */
+ }
+
+ .modal-content {
+     background-color: var(--blackColor);
+     margin: 15% auto;
+     /* 15% from the top and centered */
+     padding: 0;
+     border: 1px solid #888;
+     width: 80%;
+     height: 50%;
+
+     /* Could be more or less, depending on screen size */
+     max-width: 500px;
+     position: relative;
+ }
+
+ .modal-content video {
+     width: 60%;
+     height: 100%;
+ }
+
+ /* Close button */
+ .close {
+     color: #aaa;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+     position: absolute;
+     right: 10px;
+     top: 10px;
+ }
+
+ .close:hover,
+ .close:focus {
+     color: white;
+     text-decoration: none;
+     cursor: pointer;
+ }
+
+ /* Button style */
+ button {
+     padding: 10px 20px;
+     background-color: var(--secondaryColor);
+     color: var(--whiteColor);
+     border: none;
+     cursor: pointer;
+     font-size: 16px;
+     border-radius: 5px;
+ }
+
+ button:hover {
+     background-color: var(--primaryColor);
+ }
+
+
+
  .program {
      padding: 2%;
      text-align: right;
@@ -169,7 +245,7 @@
      display: flex;
      margin: 2% 0;
      gap: 2rem;
-     overflow-x: auto;
+     overflow-x: none;
 
  }
 
@@ -256,6 +332,7 @@
  }
 
  .story {
+     margin-top: 5%;
      width: 100%;
      height: 80%;
      min-height: 75vh;
@@ -325,7 +402,8 @@
 
  }
 
- .client {
+ .gym {
+     margin-top: 5%;
      width: 100%;
      display: flex;
      padding: 0 2% 2%;
@@ -334,6 +412,160 @@
      gap: 2rem;
      background-color: var(--fontColor);
 
+ }
+
+ .gym-wrapper {
+     width: 66%;
+ }
+
+ .gym-card {
+     background-color: var(--secondaryColor);
+     padding: 10px;
+     display: flex;
+     justify-content: center;
+     margin: 1.5rem 0;
+     gap: 1rem;
+     position: relative;
+     border-radius: 20px;
+ }
+
+ .gym-card:hover {
+     cursor: pointer;
+     transform: scale(1.1);
+     transition: transform 0.5s ease;
+     transform-origin: center;
+     background-color: var(--primaryColor);
+     border: 1px solid var(--fontColor);
+     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+ }
+
+
+ .gym-icons {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+ }
+
+ .gym-icons i {
+     font-size: 24px;
+     /* Adjust the size as needed */
+     color: var(--whiteColor);
+     /* Adjust the color to fit your theme */
+ }
+
+ .gym-img {
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     object-fit: cover;
+     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+
+ }
+
+ .gym-detail {
+     color: var(--whiteColor);
+ }
+
+ .gym-detail h3 {
+     color: var(--blackColor);
+ }
+
+ .gym-detail a:hover {
+     color: var(--primaryColor);
+ }
+
+
+
+
+ .transformation {
+     padding: 2%;
+     text-align: right;
+ }
+
+ .transformation-wrapper {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     margin: 2% 0;
+     gap: 2rem;
+     overflow-x: auto;
+     flex-direction: row;
+ }
+
+ .transformation-card {
+     position: relative;
+     height: 400px;
+     width: 30%;
+     min-width: 200px;
+     background-color: var(--blackColor);
+     transition: transform 1s ease;
+     transform-origin: center;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+ }
+
+ .flip-card-inner {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     transition: transform 1s ease;
+     transform-style: preserve-3d;
+ }
+
+ .flip-card-front,
+ .flip-card-back {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     backface-visibility: hidden;
+ }
+
+ .flip-card-front {
+     background-color: #bbb;
+     color: black;
+ }
+
+ .flip-card-back {
+     background-color: dodgerblue;
+     color: white;
+     transform: rotateY(180deg);
+ }
+
+ .card-img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+
+ .transformation-card.flipped .flip-card-inner {
+     transform: rotateY(180deg);
+ }
+
+ .transformation-card:hover .flip-card-inner {
+     transform: rotateY(180deg);
+ }
+
+ .transformation-title {
+     position: absolute;
+     top: 5%;
+     text-align: center;
+     color: var(--whiteColor);
+     padding: 10px 20px;
+     letter-spacing: 1;
+     font-weight: 700;
+     font-size: 24px;
+ }
+
+
+ .client {
+     width: 100%;
+     display: flex;
+     padding: 0 2% 2%;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+     background-color: var(--fontColor);
  }
 
  .client-wrapper {
@@ -351,15 +583,6 @@
      border-radius: 20px;
  }
 
- .client-card:hover {
-     cursor: pointer;
-     transform: scale(1.1);
-     transition: transform 0.5s ease;
-     transform-origin: center;
-     background-color: var(--primaryColor);
-     border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
- }
 
 
  .client-icons {
@@ -368,12 +591,7 @@
      right: 10px;
  }
 
- .client-icons i {
-     font-size: 24px;
-     /* Adjust the size as needed */
-     color: var(--whiteColor);
-     /* Adjust the color to fit your theme */
- }
+
 
  .client-img {
      width: 80px;
@@ -386,15 +604,14 @@
 
  .client-detail {
      color: var(--whiteColor);
+     text-align: left;
  }
 
  .client-detail h3 {
      color: var(--blackColor);
  }
 
- .client-detail a:hover {
-     color: var(--primaryColor);
- }
+
 
  .packages {
      padding: 2%;
@@ -413,7 +630,7 @@
  }
 
  .package-card {
-     padding: 3%;
+     padding-top: 4%;
      position: relative;
      height: 450px;
      width: 30%;
@@ -464,6 +681,7 @@
      flex-direction: column;
      align-items: left;
      text-align: left;
+     font-size: 14px;
 
  }
 
@@ -583,6 +801,7 @@
      font-size: 12px;
      border-radius: 20px;
      cursor: pointer;
+
  }
 
  .bootcamp-btn:hover {
@@ -593,6 +812,7 @@
      background-color: var(--primaryColor);
      border: 1px solid var(--fontColor);
      box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+
  }
 
  .bootcamp-card {
@@ -639,6 +859,7 @@
 
  .bootcamp-detail {
      color: var(--whiteColor);
+     text-align: left;
  }
 
  .bootcamp-detail h3 {
@@ -708,7 +929,7 @@
 
  footer {
      display: flex;
-     justify-content: space-between;
+     justify-content: flex-start;
      align-items: flex-start;
      flex-wrap: wrap;
      background-color: var(--fontColor);
@@ -723,6 +944,7 @@
      min-height: 100%;
      padding: 2%;
      color: var(--whiteColor);
+     text-align: left;
  }
 
  .subscribe p {
@@ -807,6 +1029,39 @@
 
  @media screen and (max-width:640px) {
 
+
+     body {
+         width: 95%
+     }
+
+     .title {
+         font-size: 46px;
+     }
+
+     .logo-container {
+         display: none;
+         align-items: center;
+     }
+
+     .logo {
+         font-size: 26px;
+         text-decoration: none;
+         color: var(--secondaryColor);
+         font-weight: bold;
+         letter-spacing: 1;
+
+     }
+
+     .program-logo {
+         display: none;
+         width: 50px;
+         height: 50px;
+         border-radius: 50%;
+         display: block;
+         object-fit: cover;
+
+     }
+
      .menu-toggle,
      .bar {
          display: block;
@@ -849,6 +1104,54 @@
          padding: 1.5rem;
      }
 
+
+     .modal {
+         display: none;
+         /* Hidden by default */
+         position: auto;
+         /* Stay in place */
+         z-index: 1;
+         /* Sit on top */
+         left: 0;
+         top: 0;
+         width: 100%;
+         /* Full width */
+         height: 75%;
+         /* Full height */
+         overflow: none;
+         /* Enable scrolling if needed */
+         background-color: rgba(0, 0, 0, 0.8);
+         /* Black background with opacity */
+     }
+
+     .modal-content {
+         background-color: var(--blackColor);
+         margin: 50% auto;
+         /* 15% from the top and centered */
+         padding: 0;
+         border: 1px solid #888;
+         width: 50%;
+         height: 50%;
+
+         /* Could be more or less, depending on screen size */
+         max-width: 500px;
+         position: relative;
+     }
+
+     .modal-content video {
+         width: 70%;
+         height: 100%;
+     }
+
+     .program-wrapper {
+         width: 95%;
+         display: flex;
+         margin: 2% 0;
+         gap: 2rem;
+         overflow-x: auto;
+
+     }
+
      .story-card {
          width: 100px;
          height: 100px;
@@ -859,6 +1162,16 @@
          text-align: center;
          line-height: 1.5;
      }
+
+
+     .gym {
+         flex-wrap: wrap;
+     }
+
+     .gym-wrapper {
+         width: 100%;
+     }
+
 
      .client {
          flex-wrap: wrap;
@@ -928,6 +1241,59 @@
          /* Adjust font size as needed */
      }
 
+     .transformation {
+         overflow: hidden;
+     }
+
+     .transformation-wrapper {
+         display: flex;
+         overflow-x: auto;
+         /* Enables horizontal scrolling */
+         -webkit-overflow-scrolling: touch;
+         /* Enables smooth scrolling on iOS */
+         scroll-snap-type: x mandatory;
+         /* Optional: for a snapping effect */
+     }
+
+
+
+
+     .transformation-wrapper::-webkit-scrollbar {
+         display: contents;
+
+     }
+
+     .transformation-wrapper {
+
+         /* padding: 1%; */
+         /* -ms-overflow-style: none; */
+         /* Hide scrollbar on IE and Edge */
+         scrollbar-width: none;
+         /* Hide scrollbar on Firefox */
+         align-items: center;
+
+     }
+
+     .transformation-card {
+         /* margin-left: 1%; */
+         min-width: 70%;
+         /* Ensure each card takes full width */
+         flex: 0 0 auto;
+         /* Prevents cards from shrinking or growing */
+         box-sizing: border-box;
+         /* Ensure padding and border are included in the width */
+         scroll-snap-align: start;
+         /* Optional: for a snapping effect */
+         /* padding: 1%; */
+         /* Add some padding */
+         background: white;
+         /* Set a background color */
+         border-radius: 0.5rem;
+         /* Optional: for rounded corners */
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         /* Optional: for a slight shadow effect */
+     }
+
      .packages {
          overflow: hidden;
      }
@@ -961,7 +1327,7 @@
 
      .package-card {
          margin-left: 1%;
-         min-width: 100%;
+         min-width: 70%;
          /* Ensure each card takes full width */
          flex: 0 0 auto;
          /* Prevents cards from shrinking or growing */
@@ -977,6 +1343,13 @@
          /* Optional: for rounded corners */
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
          /* Optional: for a slight shadow effect */
+     }
+
+     .title-bootcamp {
+         font-size: 40px;
+         font-weight: 700;
+         letter-spacing: 1;
+         margin-bottom: 0.5rem;
      }
 
      .bootcamp-btn {

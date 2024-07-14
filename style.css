@@ -124,7 +124,7 @@
      right: 0;
      bottom: 0;
      background-image: linear-gradient(to topo, rgba(0, 0, 0, 0.8)0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8)100%);
-     background-color: rgba(0, 0, 0, 0.4);
+     background-color: rgba(0, 0, 0, 0.6);
      z-index: 1;
  }
 
@@ -159,9 +159,8 @@
      letter-spacing: 1.5;
  }
 
-
-
  /* Modal styles */
+
  .modal {
      display: none;
      /* Hidden by default */
@@ -181,6 +180,7 @@
      /* Black background with opacity */
  }
 
+
  .modal-content {
      background-color: var(--blackColor);
      margin: 15% auto;
@@ -190,15 +190,18 @@
      width: 80%;
      height: 50%;
 
+
      /* Could be more or less, depending on screen size */
      max-width: 500px;
      position: relative;
  }
 
+
  .modal-content video {
      width: 60%;
      height: 100%;
  }
+
 
  /* Close button */
  .close {
@@ -211,12 +214,14 @@
      top: 10px;
  }
 
+
  .close:hover,
  .close:focus {
      color: white;
      text-decoration: none;
      cursor: pointer;
  }
+
 
  /* Button style */
  button {
@@ -229,9 +234,13 @@
      border-radius: 5px;
  }
 
+
  button:hover {
      background-color: var(--primaryColor);
  }
+
+
+ /* PROGRAM SECTION */
 
 
 
@@ -240,35 +249,46 @@
      text-align: right;
  }
 
+
  .program-wrapper {
      width: 100%;
      display: flex;
-     margin: 2% 0;
+     /* margin: 10% 0; */
+     margin-top: 4%;
      gap: 2rem;
      overflow-x: none;
 
+
  }
+
+
 
  .program-card {
      position: relative;
      height: 400px;
      width: 30%;
+     border-radius: 20px;
      min-width: 200px;
      background-color: var(--blackColor);
      transition: transform 1s ease;
      transform-origin: center;
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
  }
+
 
  .program-img {
      width: 100%;
      height: 100%;
      opacity: 0.5;
      object-fit: cover;
+     border-radius: 20px;
      transition: transform 1s ease;
      transform-origin: center;
 
+
  }
+
 
  .program-title {
      position: absolute;
@@ -282,11 +302,39 @@
      cursor: pointer;
  }
 
+
  .program-detail {
      display: none;
-
+     /* position: absolute;
+     top: 75%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 100%;
+     background-color: rgba(0, 0, 0, 0.8);
+     color: var(--whiteColor);
+     padding: 20px;
+     text-align: center;
+     opacity: 0;
+     transition: opacity 0.5s ease; */
 
  }
+
+
+
+ .program-detail h3 {
+     margin: 10px 0;
+     font-size: 24px;
+     color: var(--whiteColor);
+ }
+
+
+ .program-detail p {
+     font-size: 16px;
+     margin: 10px 0;
+     color: var(--whiteColor);
+ }
+
+
 
  .program-card:hover .program-img {
      opacity: 0.8;
@@ -295,7 +343,10 @@
      transform-origin: center;
 
 
+
+
  }
+
 
  .program-card:hover .program-detail {
      position: absolute;
@@ -311,8 +362,10 @@
      font-size: 13px;
      letter-spacing: 1;
      line-height: 1.8;
-     transform-origin: center;
+     cursor: pointer;
+     opacity: 1;
  }
+
 
  .program-btn {
      margin-top: 10px;
@@ -325,11 +378,30 @@
      cursor: pointer;
  }
 
+
  .program-btn:hover {
      background-color: var(--primaryColor);
      color: var(--secondaryColor);
      letter-spacing: 1;
  }
+
+
+
+ .program-title {
+     position: absolute;
+     top: 5%;
+     text-align: center;
+     color: var(--whiteColor);
+     padding: 10px 20px;
+     letter-spacing: 1;
+     font-weight: 700;
+     font-size: 24px;
+     cursor: pointer;
+ }
+
+
+ /* STORY SECTION */
+
 
  .story {
      margin-top: 5%;
@@ -345,6 +417,15 @@
      position: relative;
  }
 
+ .title-story {
+     color: var(--secondaryColor);
+     font-weight: 700;
+     font-size: 42px;
+     cursor: pointer;
+
+ }
+
+
  .story::before {
      content: "";
      position: absolute;
@@ -353,8 +434,9 @@
      right: 0;
      bottom: 0;
      background-image: linear-gradient(to topo, rgba(0, 0, 0, 0.8)0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8)100%);
-     background-color: rgba(0, 0, 0, 0.4);
+     background-color: rgba(0, 0, 0, 0.6);
  }
+
 
  .story-wrapper {
      position: relative;
@@ -363,6 +445,8 @@
      align-items: center;
      height: 100%;
      z-index: 3;
+     margin-bottom: 3%;
+
      color: var(--whiteColor);
  }
 
@@ -470,11 +554,13 @@
      color: var(--blackColor);
  }
 
+
  .gym-detail a:hover {
      color: var(--primaryColor);
  }
 
 
+ /* TRANSFORMATION SECTION */
 
 
  .transformation {
@@ -485,6 +571,7 @@
  .transformation-wrapper {
      height: 100%;
      width: 100%;
+     border-radius: 20px;
      display: flex;
      margin: 2% 0;
      gap: 2rem;
@@ -493,17 +580,19 @@
  }
 
  .transformation-card {
+     border-radius: 20px;
      position: relative;
-     height: 400px;
+     height: 350px;
      width: 30%;
      min-width: 200px;
      background-color: var(--blackColor);
      transition: transform 1s ease;
      transform-origin: center;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
  }
 
  .flip-card-inner {
+     border-radius: 20px;
      position: relative;
      width: 100%;
      height: 100%;
@@ -523,18 +612,21 @@
  .flip-card-front {
      background-color: #bbb;
      color: black;
+     border-radius: 20px;
  }
 
  .flip-card-back {
      background-color: dodgerblue;
      color: white;
      transform: rotateY(180deg);
+     border-radius: 20px;
  }
 
  .card-img {
      width: 100%;
      height: 100%;
      object-fit: cover;
+     border-radius: 20px;
  }
 
 
@@ -610,6 +702,10 @@
  .client-detail h3 {
      color: var(--blackColor);
  }
+
+
+
+ /* PACKAGE SECTION */
 
 
 
@@ -732,17 +828,29 @@
  }
 
 
+ /* BOOTCAMP SECTION */
+
+
  .bootcamp {
      width: 100%;
      height: 70vh;
      padding: 5%;
-     background-image: url(img/bootcamp-4555371.jpeg);
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-color: orange;
      position: relative;
+     overflow: hidden;
  }
+
+ .bootcamp .video-background {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     min-width: 100%;
+     min-height: 100%;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -1;
+ }
+
 
  .bootcamp::before {
      content: "";
@@ -871,6 +979,10 @@
  }
 
 
+
+ /* COACH SECTION */
+
+
  .coach {
      width: 100%;
      padding: 2% 5%;
@@ -878,52 +990,54 @@
      background-color: var(--primaryColor);
  }
 
-
  .coach-wrapper {
+     height: 100%;
+     width: 100%;
      display: flex;
-     justify-content: center;
-     align-items: center;
+     margin: 2% 0;
+     gap: 2rem;
+     overflow-x: auto;
+     flex-direction: row;
  }
 
  .coach-card {
-     display: flex;
-     border: 1px solid var(--whiteColor);
-     padding: 1rem;
-     text-align: left;
-     margin: 1rem;
-     gap: 1rem;
-     cursor: pointer;
- }
-
- .coach-card:hover {
-     background-color: var(--fontColor);
-     border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+     position: relative;
+     width: 25%;
+     height: 350px;
+     overflow: hidden;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     transition: transform 0.3s;
  }
 
  .coach-img {
-     width: 200px;
-     height: 150px;
+     width: 100%;
+     height: 100%;
      object-fit: cover;
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
-
+     transition: opacity 0.3s;
  }
-
 
  .coach-detail {
-     color: var(--whiteColor);
- }
-
-
- .coach-detail h5 {
-     color: var(--secondaryColor);
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.7);
+     color: white;
+     padding: 15px;
+     opacity: 0;
+     transition: opacity 0.3s;
+     text-align: center;
+     border-radius: 0 0 10px 10px;
  }
 
  .coach-detail p {
-     font-size: 13px;
+     font-size: 15px;
      letter-spacing: 1;
-     margin-top: 10px;
  }
+
+
+
+ /* FOOTER */
 
 
 
@@ -986,9 +1100,25 @@
      margin: 20px 20px 0 0;
  }
 
- .social-media a:hover {
-     color: var(--primaryColor);
+ .instagram i,
+ .tiktok i,
+ .facebook i {
+     transition: color 0.3s ease;
  }
+
+ .instagram:hover i {
+     color: #E1306C;
+ }
+
+ .tiktok:hover i {
+     color: #69C9D0;
+ }
+
+
+ .facebook:hover i {
+     color: #1877F2;
+ }
+
 
  .footer-menus {
      flex: 1;
@@ -1025,13 +1155,13 @@
      color: var(--blackColor)
  }
 
+
  /* for mobile view */
 
  @media screen and (max-width:640px) {
 
-
      body {
-         width: 95%
+         width: 100%;
      }
 
      .title {
@@ -1144,18 +1274,32 @@
      }
 
      .program-wrapper {
-         width: 95%;
+
+
          display: flex;
+         overflow-x: auto;
+         border-radius: 20px;
+         /* Enables horizontal scrolling */
+         -webkit-overflow-scrolling: touch;
+         /* Enables smooth scrolling on iOS */
+         scroll-snap-type: x mandatory;
+         /* Optional: for a snapping effect */
+         width: 100%;
          margin: 2% 0;
          gap: 2rem;
          overflow-x: auto;
 
      }
 
+
      .story-card {
          width: 100px;
          height: 100px;
      }
+
+     /* .story-desc h1 {
+         font-size: small;
+     } */
 
      .story-desc {
          width: 95%;
@@ -1182,8 +1326,21 @@
      }
 
      .coach-wrapper {
-         flex-wrap: wrap;
+         display: flex;
+         overflow-x: auto;
+         -webkit-overflow-scrolling: touch;
+         scroll-snap-type: x mandatory;
+         flex-wrap: nowrap;
+         /* Prevent wrapping to ensure horizontal scroll */
+     }
 
+     .coach-wrapper::-webkit-scrollbar {
+         display: none;
+     }
+
+     .coach-wrapper {
+         scrollbar-width: none;
+         align-items: center;
      }
 
      .coach-card {
@@ -1192,54 +1349,45 @@
          align-items: center;
          text-align: center;
          background-color: var(--primaryColor);
-         padding: 20px;
          margin: 10px;
          border-radius: 10px;
+         min-width: 70%;
+         /* Ensure each card takes full width */
+         flex: 0 0 auto;
+         box-sizing: border-box;
+         scroll-snap-align: start;
+         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+         transition: transform 1s ease;
      }
 
      .coach-img {
-         width: 150px;
-         /* Adjust the size as needed */
-         height: 150px;
-         /* Adjust the size as needed */
-         border-radius: 50%;
-         /* Makes the image circular */
+         width: 100%;
+         height: 100%;
+         /* border-radius: 50%; */
          object-fit: cover;
-         /* Ensures the image covers the circle */
-         margin-bottom: 20px;
-         /* Space between image and text */
+         /* margin-bottom: 20px; */
      }
 
      .coach-detail {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
+         width: 100%;
+         background-color: #040507bf;
+         color: var(--whiteColor);
+         padding: 5%;
          text-align: center;
+         font-size: 13px;
+         letter-spacing: 1;
+         line-height: 1.8;
      }
 
      .coach-detail h3,
      .coach-detail h5,
      .coach-detail p {
          margin: 5px 0;
-         /* Adjust margin as needed for spacing */
          color: var(--whiteColor);
-         /* Adjust text color as needed */
      }
 
-     .coach-detail h3 {
-         font-size: 24px;
-         /* Adjust font size as needed */
-     }
 
-     .coach-detail h5 {
-         font-size: 18px;
-         /* Adjust font size as needed */
-     }
 
-     .coach-detail p {
-         font-size: 16px;
-         /* Adjust font size as needed */
-     }
 
      .transformation {
          overflow: hidden;
@@ -1248,6 +1396,8 @@
      .transformation-wrapper {
          display: flex;
          overflow-x: auto;
+         border-radius: 20px;
+         align-items: center;
          /* Enables horizontal scrolling */
          -webkit-overflow-scrolling: touch;
          /* Enables smooth scrolling on iOS */
@@ -1263,16 +1413,6 @@
 
      }
 
-     .transformation-wrapper {
-
-         /* padding: 1%; */
-         /* -ms-overflow-style: none; */
-         /* Hide scrollbar on IE and Edge */
-         scrollbar-width: none;
-         /* Hide scrollbar on Firefox */
-         align-items: center;
-
-     }
 
      .transformation-card {
          /* margin-left: 1%; */
@@ -1288,7 +1428,8 @@
          /* Add some padding */
          background: white;
          /* Set a background color */
-         border-radius: 0.5rem;
+
+         border-radius: 20px;
          /* Optional: for rounded corners */
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
          /* Optional: for a slight shadow effect */
@@ -1339,7 +1480,7 @@
          /* Add some padding */
          background: white;
          /* Set a background color */
-         border-radius: 0.5rem;
+         border-radius: 20px;
          /* Optional: for rounded corners */
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
          /* Optional: for a slight shadow effect */

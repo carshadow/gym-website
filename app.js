@@ -128,6 +128,30 @@ function isElementInViewport(el) {
     );
 }
 
+// eventListener for the details in the coach section 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const coachSection = document.querySelector('.coach');
+    const coachDetails = document.querySelectorAll('.coach-detail');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    coachDetails.forEach(detail => {
+                        detail.style.opacity = '1';
+                    });
+                }, 1500); // 2 seconds delay
+            } else {
+                coachDetails.forEach(detail => {
+                    detail.style.opacity = '0';
+                });
+            }
+        });
+    }, { threshold: 0.5 }); // Adjust threshold as needed
+
+    observer.observe(coachSection);
+});
 
 
 
@@ -148,7 +172,7 @@ document.querySelector('.bootcamp-btn').addEventListener('click', function () {
 //gym card click 
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.client-click').forEach(function (card) {
+    document.querySelectorAll('.gym-click').forEach(function (card) {
         card.addEventListener('click', function () {
             window.location.href = card.getAttribute('data-href');
         });

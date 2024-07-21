@@ -114,6 +114,9 @@
      background-size: cover;
      background-color: orange;
      position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
  }
 
  .header::before {
@@ -123,41 +126,47 @@
      left: 0;
      right: 0;
      bottom: 0;
-     background-image: linear-gradient(to topo, rgba(0, 0, 0, 0.8)0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8)100%);
+     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
      background-color: rgba(0, 0, 0, 0.6);
      z-index: 1;
  }
 
  .header-desc {
-     position: absolute;
+     position: relative;
+     /* Cambiado de absolute a relative */
      min-width: 300px;
-     width: 40%;
-     height: calc(100% - 60px);
+     width: auto;
+     /* Cambiado de 40% a auto para centrar el texto */
+     height: auto;
+     /* Ajuste para que el contenedor se ajuste al contenido */
      display: flex;
      flex-direction: column;
-     align-items: flex-start;
+     align-items: center;
+     /* Cambiado de flex-start a center */
      justify-content: center;
      gap: 1rem;
-     z-index: 3;
-     color: var(--whiteColor)
+     z-index: 2;
+     /* Ajuste para mantener el contenido sobre el fondo */
+     color: var(--whiteColor);
+     text-align: center;
+     /* Centrar el texto */
  }
 
  .title {
      font-size: 56px;
      font-weight: 700;
-     letter-spacing: 1;
+     letter-spacing: 1px;
+     /* Añadido px */
      margin-bottom: 0.5rem;
      color: var(--whiteColor);
  }
 
- .title span {
-
-     color: var(--secondaryColor)
- }
 
  .header-desc p {
-     letter-spacing: 1.5;
+     letter-spacing: 1.5px;
+     /* Añadido px */
  }
+
 
  /* Modal styles */
 
@@ -174,46 +183,63 @@
      /* Full width */
      height: 100%;
      /* Full height */
-     overflow: none;
+     overflow: auto;
      /* Enable scrolling if needed */
      background-color: rgba(0, 0, 0, 0.8);
      /* Black background with opacity */
  }
 
+ .modal {
+     display: none;
+     /* Hidden by default */
+     position: fixed;
+     /* Stay in place */
+     z-index: 1;
+     /* Sit on top */
+     left: 0;
+     top: 0%;
+     width: 100%;
+     /* Full width */
+     height: 100%;
+     /* Full height */
+     overflow: hidden;
+     /* Disable scrolling */
+     background-color: rgba(0, 0, 0, 0.8);
+     /* Black background with opacity */
+ }
 
  .modal-content {
      background-color: var(--blackColor);
-     margin: 15% auto;
-     /* 15% from the top and centered */
-     padding: 0;
+     margin: 5% auto;
+     /* Centered */
+     padding: 20px;
      border: 1px solid #888;
-     width: 80%;
-     height: 50%;
-
-
+     width: 90%;
      /* Could be more or less, depending on screen size */
-     max-width: 500px;
+     max-width: 1000px;
+     /* Maximum width */
      position: relative;
+     max-height: 100%;
+     /* Max height of modal */
+     overflow: hidden;
+     /* Disable scrolling inside the modal */
  }
-
 
  .modal-content video {
-     width: 60%;
-     height: 100%;
+     width: 100%;
+     height: auto;
  }
-
 
  /* Close button */
  .close {
      color: #aaa;
      float: right;
-     font-size: 28px;
+     font-size: 32px;
      font-weight: bold;
      position: absolute;
      right: 10px;
-     top: 10px;
+     top: 4px;
  }
-
 
  .close:hover,
  .close:focus {
@@ -291,6 +317,9 @@
 
 
  .program-title {
+     display: flex;
+     justify-content: center;
+     align-content: center;
      position: absolute;
      top: 5%;
      text-align: center;
@@ -404,13 +433,13 @@
 
 
  .story {
-     margin-top: 5%;
+     /* margin-top: 1%; */
      width: 100%;
      height: 80%;
      min-height: 75vh;
      padding: 5% 2% 0 2%;
      text-align: center;
-     background-image: url('img/about.jpeg');
+     /* background-image: url('img/about.jpeg'); */
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
@@ -425,17 +454,14 @@
 
  }
 
+ .story-wrapper h3 {
+     font-size: 24px;
+     font-weight: 700;
+     color: var(--secondaryColor);
+     margin-top: 10px;
 
- .story::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-image: linear-gradient(to topo, rgba(0, 0, 0, 0.8)0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8)100%);
-     background-color: rgba(0, 0, 0, 0.6);
  }
+
 
 
  .story-wrapper {
@@ -444,7 +470,6 @@
      flex-direction: column;
      align-items: center;
      height: 100%;
-     z-index: 3;
      margin-bottom: 3%;
 
      color: var(--whiteColor);
@@ -486,43 +511,47 @@
 
  }
 
- .gym {
-     margin-top: 5%;
-     width: 100%;
-     display: flex;
-     padding: 0 2% 2%;
-     justify-content: center;
-     align-items: center;
-     gap: 2rem;
-     background-color: var(--fontColor);
-
- }
-
  .gym-wrapper {
-     width: 66%;
+     width: 100%;
+     /* Adjust width as needed */
+     display: flex;
+     flex-wrap: wrap;
+     /* Allows items to wrap to the next line */
+     justify-content: center;
+     gap: 1rem;
+     /* Adjust gap between items */
+     overflow-y: auto;
+     /* Enable vertical scrolling if content exceeds modal height */
+     max-height: 70%;
+     /* Limit height to avoid overflowing the modal */
  }
 
  .gym-card {
      background-color: var(--secondaryColor);
      padding: 10px;
      display: flex;
+     flex-direction: column;
      justify-content: center;
-     margin: 1.5rem 0;
-     gap: 1rem;
+     align-items: center;
+     gap: 0.5rem;
+     /* Adjust spacing between elements inside the card */
      position: relative;
      border-radius: 20px;
+     width: 90%;
+     /* Adjust card width as needed */
+     max-width: 300px;
+     /* Limit card width */
  }
 
  .gym-card:hover {
      cursor: pointer;
-     transform: scale(1.1);
+     /* transform: scale(1.1);
      transition: transform 0.5s ease;
-     transform-origin: center;
+     transform-origin: center; */
      background-color: var(--primaryColor);
      border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
  }
-
 
  .gym-icons {
      position: absolute;
@@ -532,18 +561,23 @@
 
  .gym-icons i {
      font-size: 24px;
-     /* Adjust the size as needed */
+     /* Adjust icon size */
      color: var(--whiteColor);
-     /* Adjust the color to fit your theme */
+     /* Adjust icon color */
  }
 
  .gym-img {
-     width: 80px;
-     height: 80px;
-     border-radius: 50%;
+     width: 100%;
+     /* Adjust image width */
+     max-width: 100%;
+     /* Ensure image fits within card */
+     height: auto;
+     /* Maintain aspect ratio */
+     border-radius: 10px;
+     /* Rounded corners for image */
      object-fit: cover;
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
-
+     /* Ensure image covers the entire container */
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
  }
 
  .gym-detail {
@@ -552,12 +586,14 @@
 
  .gym-detail h3 {
      color: var(--blackColor);
+     font-size: 18px;
+     /* Adjust heading font size */
  }
-
 
  .gym-detail a:hover {
      color: var(--primaryColor);
  }
+
 
 
  /* TRANSFORMATION SECTION */
@@ -629,6 +665,19 @@
      border-radius: 20px;
  }
 
+ .title-transformaciones {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 3%;
+     color: var(--secondaryColor);
+     font-size: 48px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     /* Añadido px */
+     margin-bottom: 5%;
+ }
+
 
  .transformation-card.flipped .flip-card-inner {
      transform: rotateY(180deg);
@@ -638,7 +687,7 @@
      transform: rotateY(180deg);
  }
 
- .transformation-title {
+ /* .transformation-title {
      position: absolute;
      top: 5%;
      text-align: center;
@@ -647,7 +696,7 @@
      letter-spacing: 1;
      font-weight: 700;
      font-size: 24px;
- }
+ } */
 
 
  .client {
@@ -703,266 +752,147 @@
      color: var(--blackColor);
  }
 
+ .title-clientes {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 3%;
+     color: var(--secondaryColor);
+     font-size: 48px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     /* Añadido px */
+     margin-bottom: 5%;
+ }
 
 
  /* PACKAGE SECTION */
 
 
 
- .packages {
-     padding: 2%;
-     text-align: right;
- }
-
  .package-wrapper {
-     width: 100%;
      display: flex;
-     padding: 0 5%;
-     margin: 2% 0;
-     gap: 2rem;
-     overflow-x: auto;
-
-
+     flex-wrap: wrap;
+     gap: 1rem;
+     margin-top: 20px;
  }
 
  .package-card {
-     padding-top: 4%;
-     position: relative;
-     height: 450px;
-     width: 30%;
-     min-width: 200px;
+     padding: 20px;
      background-color: var(--whiteColor);
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
      border-radius: 20px;
+     width: 30%;
+     /* Full width */
+     box-sizing: border-box;
+     /* Include padding and border in the element's total width and height */
+     flex: 1 1 30%;
  }
 
-
- .package-title {
-     position: absolute;
-     top: 4%;
-     text-align: center;
-     color: var(--whiteColor);
-     padding: 10px 20px;
-     letter-spacing: 1;
-     font-weight: 700;
-     font-size: 24px;
-     cursor: pointer;
-
+ .package-card h1,
+ .package-card h2,
+ .package-card p {
+     margin: 0 0 10px 0;
  }
 
- .package-detail {
-     display: none;
-     border-radius: round;
-
-
- }
-
- .package-p h1 {
-     display: flex;
-     margin-top: 2%;
-     justify-content: center;
-     color: var(--blackColor);
-     padding: 3%;
- }
-
- .package-p h2 {
-     display: flex;
-     justify-content: center;
+ .package-card h3 {
+     font-size: 30px;
+     margin: 0 0 10px 0;
      color: var(--primaryColor);
-     padding: 3%;
  }
 
- .package-p {
+ .package-card h1 {
+     font-size: 24px;
+     color: var(--blackColor);
+ }
+
+ .package-card h2 {
+     font-size: 20px;
+     color: var(--primaryColor);
+ }
+
+ .package-card p {
+     font-size: 16px;
+     color: var(--blackColor);
      display: flex;
-     flex-direction: column;
-     align-items: left;
-     text-align: left;
-     font-size: 14px;
-
- }
-
- .package-p p {
-     display: inline-block;
-     justify-content: center;
-     padding: 4%;
-
- }
-
- .package-p i {
-     color: var(--secondaryColor);
-     display: inline-block;
-     margin-right: 10px;
-     justify-content: center;
      align-items: center;
-     height: 100%;
-     padding: 2px;
-
  }
 
+ .package-card i {
+     color: green;
+     margin-right: 10px;
+ }
 
  .package-btn {
-     display: flex;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
-     padding: 12px 0px;
-     width: 60%;
-     margin-left: 18%;
-     margin-top: 20px;
-     border: none;
+     display: block;
+     width: 100%;
+     padding: 10px;
      background-color: var(--secondaryColor);
      color: var(--whiteColor);
-     font-size: 12px;
-     border-radius: 20px;
+     text-align: center;
+     border: none;
+     border-radius: 5px;
      cursor: pointer;
+     margin-top: 10px;
  }
 
  .package-btn:hover {
-     cursor: pointer;
-     transform: scale(1.1);
-     transition: transform 0.5s ease;
-     transform-origin: center;
      background-color: var(--primaryColor);
-     border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+ }
+
+ /* Adjust package details */
+ .package-p {
+     display: flex;
+     flex-direction: column;
+     font-size: 14px;
+ }
+
+ .package-p p {
+     padding: 4% 0;
  }
 
 
  /* BOOTCAMP SECTION */
 
 
- .bootcamp {
-     width: 100%;
-     height: 70vh;
-     padding: 5%;
-     position: relative;
-     overflow: hidden;
- }
-
- .bootcamp .video-background {
-     position: absolute;
-     right: 0;
-     bottom: 0;
-     min-width: 100%;
-     min-height: 100%;
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     z-index: -1;
- }
-
-
- .bootcamp::before {
-     content: "";
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-image: linear-gradient(to topo, rgba(0, 0, 0, 0.8)0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8)100%);
-     background-color: rgba(0, 0, 0, 0.4);
-     z-index: 1;
- }
-
- .bootcamp-desc {
-     position: absolute;
-     min-width: 300px;
-     width: 40%;
-     height: calc(100% - 60px);
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-     justify-content: center;
-     gap: 1rem;
-     z-index: 3;
-     color: var(--whiteColor)
- }
-
- .title-bootcamp {
-     font-size: 44px;
-     font-weight: 700;
-     letter-spacing: 1;
-     margin-bottom: 0.5rem;
-     color: var(--whiteColor);
- }
-
- .title-bootcamp span {
-
-     color: var(--secondaryColor)
- }
-
- .bootcamp-desc p {
-     letter-spacing: 1.5;
- }
-
- .bootcamp-btn {
-     display: flex;
-     text-align: center;
-     justify-content: center;
-     align-items: center;
-     padding: 12px 0px;
-     width: 60%;
-     margin-top: 20px;
-     border: none;
-     background-color: var(--secondaryColor);
-     color: var(--whiteColor);
-     font-size: 12px;
-     border-radius: 20px;
-     cursor: pointer;
-
- }
-
  .bootcamp-btn:hover {
-     cursor: pointer;
-     transform: scale(1.1);
-     transition: transform 0.5s ease;
-     transform-origin: center;
      background-color: var(--primaryColor);
-     border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
-
+     transform: scale(1.05);
  }
 
  .bootcamp-card {
      background-color: var(--secondaryColor);
-     padding: 6px;
-     display: flex;
-     justify-content: center;
-     margin: 1.5rem 0;
-     gap: 1rem;
-     position: relative;
-     border-radius: 30px;
+     padding: 10px;
+     /* Adjust padding */
+     margin: 15px 0;
+     /* Adjust margin */
+     border-radius: 10px;
+     font-size: 14px;
+
  }
+
 
  .bootcamp-card:hover {
-     cursor: pointer;
-     transform: scale(1.1);
-     transition: transform 0.5s ease;
-     transform-origin: center;
      background-color: var(--primaryColor);
-     border: 1px solid var(--fontColor);
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
  }
-
 
  .bootcamp-icons {
      position: absolute;
-     top: 10px;
-     right: 10px;
- }
 
- .bootcamp-icons i {
-     font-size: 24px;
      color: var(--whiteColor);
  }
 
+ .bootcamp-icons i {
+     font-size: 20px;
+ }
+
  .bootcamp-img {
-     width: 60px;
-     height: 60px;
+     width: 50px;
+     height: 50px;
      border-radius: 50%;
      object-fit: cover;
-     box-shadow: rgba(99, 99, 99, 0.2)0px 2px 8px 0px;
-
+     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
  }
 
  .bootcamp-detail {
@@ -971,11 +901,18 @@
  }
 
  .bootcamp-detail h3 {
-     color: var(--blackColor);
+     color: var(--whiteColor);
+     font-size: 10px;
+     margin-bottom: 0.5rem;
+ }
+
+ .bootcamp-detail a {
+     color: var(--whiteColor);
+     text-decoration: none;
  }
 
  .bootcamp-detail a:hover {
-     color: var(--primaryColor);
+     text-decoration: underline;
  }
 
 
@@ -987,52 +924,88 @@
      width: 100%;
      padding: 2% 5%;
      text-align: right;
-     background-color: var(--primaryColor);
  }
 
  .coach-wrapper {
      height: 100%;
      width: 100%;
+     align-items: center;
+     justify-content: center;
      display: flex;
      margin: 2% 0;
      gap: 2rem;
-     overflow-x: auto;
-     flex-direction: row;
+     flex-direction: column;
  }
 
  .coach-card {
-     position: relative;
-     width: 25%;
-     height: 350px;
+     width: 100%;
+     max-width: 500px;
+     height: auto;
      overflow: hidden;
      border-radius: 10px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
      transition: transform 0.3s;
+     margin: 0 auto;
  }
 
  .coach-img {
      width: 100%;
-     height: 100%;
+     height: auto;
      object-fit: cover;
-     transition: opacity 0.3s;
  }
 
  .coach-detail {
-     position: absolute;
-     bottom: 0;
      width: 100%;
-     background: rgba(0, 0, 0, 0.7);
+     max-width: 800px;
+     background: var(--secondaryColor);
      color: white;
      padding: 15px;
-     opacity: 0;
-     transition: opacity 0.3s;
-     text-align: center;
-     border-radius: 0 0 10px 10px;
+     text-align: left;
+     border-radius: 10px;
+     /* margin: 0 auto; */
+     margin-top: 5%;
+ }
+
+ .coach-detail h3 {
+     color: var(--blackColor);
+     margin-top: 0;
  }
 
  .coach-detail p {
      font-size: 15px;
      letter-spacing: 1;
+     color: white;
+ }
+
+ .title-entrenador {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 3%;
+     color: var(--secondaryColor);
+     font-size: 56px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     margin-bottom: 5%;
+ }
+
+
+ .long-text {
+     display: none;
+ }
+
+ .read-more-btn {
+     background-color: var(--whiteColor);
+     color: black;
+     border: none;
+     padding: 10px;
+     cursor: pointer;
+     font-size: 16px;
+     border-radius: 5px;
+ }
+
+ .read-more-btn:hover {
+     background-color: var(--whiteColor);
  }
 
 
@@ -1169,7 +1142,8 @@
      }
 
      .logo-container {
-         display: none;
+         display: flex;
+         justify-content: space-between;
          align-items: center;
      }
 
@@ -1194,7 +1168,7 @@
 
      .menu-toggle,
      .bar {
-         display: block;
+
          z-index: 100;
      }
 
@@ -1238,7 +1212,7 @@
      .modal {
          display: none;
          /* Hidden by default */
-         position: auto;
+         position: fixed;
          /* Stay in place */
          z-index: 1;
          /* Sit on top */
@@ -1246,9 +1220,9 @@
          top: 0;
          width: 100%;
          /* Full width */
-         height: 75%;
+         height: 100%;
          /* Full height */
-         overflow: none;
+         overflow: auto;
          /* Enable scrolling if needed */
          background-color: rgba(0, 0, 0, 0.8);
          /* Black background with opacity */
@@ -1256,21 +1230,58 @@
 
      .modal-content {
          background-color: var(--blackColor);
-         margin: 50% auto;
+         margin: 15% auto;
          /* 15% from the top and centered */
          padding: 0;
          border: 1px solid #888;
-         width: 50%;
-         height: 50%;
-
-         /* Could be more or less, depending on screen size */
-         max-width: 500px;
+         width: 80%;
+         /* Adjust width as needed */
+         max-width: 400px;
+         /* Maximum width */
+         max-height: 100%;
+         /* Maximum height */
+         overflow-y: auto;
+         /* Enable vertical scrolling if content exceeds height */
          position: relative;
      }
 
      .modal-content video {
-         width: 70%;
-         height: 100%;
+         width: 100%;
+         /* Ensure video fills modal */
+         height: auto;
+     }
+
+     /* Close button */
+     .close {
+         color: #aaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         position: absolute;
+         right: 10px;
+         top: 10px;
+     }
+
+     .close:hover,
+     .close:focus {
+         color: white;
+         text-decoration: none;
+         cursor: pointer;
+     }
+
+     /* Button style */
+     button {
+         padding: 10px 20px;
+         background-color: var(--secondaryColor);
+         color: var(--whiteColor);
+         border: none;
+         cursor: pointer;
+         font-size: 16px;
+         border-radius: 5px;
+     }
+
+     button:hover {
+         background-color: var(--primaryColor);
      }
 
      .program-wrapper {
@@ -1278,6 +1289,7 @@
 
          display: flex;
          overflow-x: auto;
+         height: 100%;
          border-radius: 20px;
          /* Enables horizontal scrolling */
          -webkit-overflow-scrolling: touch;
@@ -1314,6 +1326,24 @@
 
      .gym-wrapper {
          width: 100%;
+     }
+
+     .gym-img {
+         width: 100%;
+         /* Adjust image width */
+         max-width: 100%;
+         /* Ensure image fits within card */
+         height: 42%;
+         /* Maintain aspect ratio */
+         border-radius: 10px;
+         /* Rounded corners for image */
+         object-fit: cover;
+         /* Ensure image covers the entire container */
+         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     }
+
+     .gym-card {
+         height: 95%;
      }
 
 
@@ -1370,7 +1400,7 @@
 
      .coach-detail {
          width: 100%;
-         background-color: #040507bf;
+         background-color: var(--secondaryColor);
          color: var(--whiteColor);
          padding: 5%;
          text-align: center;
@@ -1379,7 +1409,11 @@
          line-height: 1.8;
      }
 
-     .coach-detail h3,
+     .coach-detail h3 {
+         color: var(--blackColor);
+         font-size: 24px;
+     }
+
      .coach-detail h5,
      .coach-detail p {
          margin: 5px 0;
@@ -1406,14 +1440,6 @@
      }
 
 
-
-
-     .transformation-wrapper::-webkit-scrollbar {
-         display: contents;
-
-     }
-
-
      .transformation-card {
          /* margin-left: 1%; */
          min-width: 70%;
@@ -1435,55 +1461,15 @@
          /* Optional: for a slight shadow effect */
      }
 
-     .packages {
-         overflow: hidden;
-     }
-
      .package-wrapper {
-         display: flex;
-         overflow-x: auto;
-         /* Enables horizontal scrolling */
-         -webkit-overflow-scrolling: touch;
-         /* Enables smooth scrolling on iOS */
-         scroll-snap-type: x mandatory;
-         /* Optional: for a snapping effect */
-     }
-
-
-     .package-wrapper::-webkit-scrollbar {
-         display: contents;
-
-     }
-
-     .package-wrapper {
-
-         /* padding: 1%; */
-         /* -ms-overflow-style: none; */
-         /* Hide scrollbar on IE and Edge */
-         scrollbar-width: none;
-         /* Hide scrollbar on Firefox */
+         flex-direction: column;
          align-items: center;
-
+         gap: 2rem;
      }
 
      .package-card {
-         margin-left: 1%;
-         min-width: 70%;
-         /* Ensure each card takes full width */
-         flex: 0 0 auto;
-         /* Prevents cards from shrinking or growing */
-         box-sizing: border-box;
-         /* Ensure padding and border are included in the width */
-         scroll-snap-align: start;
-         /* Optional: for a snapping effect */
-         padding: 1rem;
-         /* Add some padding */
-         background: white;
-         /* Set a background color */
-         border-radius: 20px;
-         /* Optional: for rounded corners */
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-         /* Optional: for a slight shadow effect */
+         width: 75%;
+         margin-bottom: 2rem;
      }
 
      .title-bootcamp {
@@ -1498,7 +1484,7 @@
      }
 
      .bootcamp-card {
-         width: 100%;
+         width: 90%;
          display: flex;
          flex-direction: column;
          align-items: center;
